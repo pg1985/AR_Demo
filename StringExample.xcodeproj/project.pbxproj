@@ -22,6 +22,14 @@
 		DE7A4C42181C26C60095D7FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A4C21181C26C60095D7FA /* UIKit.framework */; };
 		DE7A4C4A181C26C60095D7FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE7A4C48181C26C60095D7FA /* InfoPlist.strings */; };
 		DE7A4C4C181C26C60095D7FA /* StringExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7A4C4B181C26C60095D7FA /* StringExampleTests.m */; };
+		DE7A4C56181C26EC0095D7FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A4C55181C26EC0095D7FA /* QuartzCore.framework */; };
+		DE7A4C58181C26F40095D7FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A4C57181C26F40095D7FA /* AVFoundation.framework */; };
+		DE7A4C5A181C26FB0095D7FA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A4C59181C26FB0095D7FA /* CoreMedia.framework */; };
+		DE7A4C5C181C27020095D7FA /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A4C5B181C27020095D7FA /* CoreVideo.framework */; };
+		DE7A4C5E181C270B0095D7FA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A4C5D181C270B0095D7FA /* OpenGLES.framework */; };
+		DE7A4C60181C27510095D7FA /* libStringOGLDemo-1.1.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A4C5F181C27510095D7FA /* libStringOGLDemo-1.1.3.a */; };
+		DE7A4C64181C28BE0095D7FA /* Marker.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7A4C63181C28BE0095D7FA /* Marker.png */; };
+		DE7A4C67181C29750095D7FA /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7A4C66181C29750095D7FA /* EAGLView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +63,17 @@
 		DE7A4C47181C26C60095D7FA /* StringExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StringExampleTests-Info.plist"; sourceTree = "<group>"; };
 		DE7A4C49181C26C60095D7FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DE7A4C4B181C26C60095D7FA /* StringExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringExampleTests.m; sourceTree = "<group>"; };
+		DE7A4C55181C26EC0095D7FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DE7A4C57181C26F40095D7FA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DE7A4C59181C26FB0095D7FA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		DE7A4C5B181C27020095D7FA /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		DE7A4C5D181C270B0095D7FA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		DE7A4C5F181C27510095D7FA /* libStringOGLDemo-1.1.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libStringOGLDemo-1.1.3.a"; sourceTree = "<group>"; };
+		DE7A4C61181C278A0095D7FA /* StringOGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringOGL.h; sourceTree = "<group>"; };
+		DE7A4C62181C27930095D7FA /* TrackerOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrackerOutput.h; sourceTree = "<group>"; };
+		DE7A4C63181C28BE0095D7FA /* Marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Marker.png; sourceTree = "<group>"; };
+		DE7A4C65181C29750095D7FA /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
+		DE7A4C66181C29750095D7FA /* EAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAGLView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +81,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7A4C5E181C270B0095D7FA /* OpenGLES.framework in Frameworks */,
+				DE7A4C5C181C27020095D7FA /* CoreVideo.framework in Frameworks */,
+				DE7A4C5A181C26FB0095D7FA /* CoreMedia.framework in Frameworks */,
+				DE7A4C58181C26F40095D7FA /* AVFoundation.framework in Frameworks */,
+				DE7A4C56181C26EC0095D7FA /* QuartzCore.framework in Frameworks */,
+				DE7A4C60181C27510095D7FA /* libStringOGLDemo-1.1.3.a in Frameworks */,
 				DE7A4C20181C26C60095D7FA /* CoreGraphics.framework in Frameworks */,
 				DE7A4C22181C26C60095D7FA /* UIKit.framework in Frameworks */,
 				DE7A4C1E181C26C60095D7FA /* Foundation.framework in Frameworks */,
@@ -84,6 +109,9 @@
 		DE7A4C11181C26C60095D7FA = {
 			isa = PBXGroup;
 			children = (
+				DE7A4C62181C27930095D7FA /* TrackerOutput.h */,
+				DE7A4C61181C278A0095D7FA /* StringOGL.h */,
+				DE7A4C5F181C27510095D7FA /* libStringOGLDemo-1.1.3.a */,
 				DE7A4C23181C26C60095D7FA /* StringExample */,
 				DE7A4C45181C26C60095D7FA /* StringExampleTests */,
 				DE7A4C1C181C26C60095D7FA /* Frameworks */,
@@ -103,6 +131,11 @@
 		DE7A4C1C181C26C60095D7FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE7A4C5D181C270B0095D7FA /* OpenGLES.framework */,
+				DE7A4C5B181C27020095D7FA /* CoreVideo.framework */,
+				DE7A4C59181C26FB0095D7FA /* CoreMedia.framework */,
+				DE7A4C57181C26F40095D7FA /* AVFoundation.framework */,
+				DE7A4C55181C26EC0095D7FA /* QuartzCore.framework */,
 				DE7A4C1D181C26C60095D7FA /* Foundation.framework */,
 				DE7A4C1F181C26C60095D7FA /* CoreGraphics.framework */,
 				DE7A4C21181C26C60095D7FA /* UIKit.framework */,
@@ -114,6 +147,8 @@
 		DE7A4C23181C26C60095D7FA /* StringExample */ = {
 			isa = PBXGroup;
 			children = (
+				DE7A4C65181C29750095D7FA /* EAGLView.h */,
+				DE7A4C66181C29750095D7FA /* EAGLView.m */,
 				DE7A4C2C181C26C60095D7FA /* AppDelegate.h */,
 				DE7A4C2D181C26C60095D7FA /* AppDelegate.m */,
 				DE7A4C2F181C26C60095D7FA /* Main_iPhone.storyboard */,
@@ -129,6 +164,7 @@
 		DE7A4C24181C26C60095D7FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DE7A4C63181C28BE0095D7FA /* Marker.png */,
 				DE7A4C25181C26C60095D7FA /* StringExample-Info.plist */,
 				DE7A4C26181C26C60095D7FA /* InfoPlist.strings */,
 				DE7A4C29181C26C60095D7FA /* main.m */,
@@ -235,6 +271,7 @@
 				DE7A4C39181C26C60095D7FA /* Images.xcassets in Resources */,
 				DE7A4C31181C26C60095D7FA /* Main_iPhone.storyboard in Resources */,
 				DE7A4C28181C26C60095D7FA /* InfoPlist.strings in Resources */,
+				DE7A4C64181C28BE0095D7FA /* Marker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7A4C37181C26C60095D7FA /* ViewController.m in Sources */,
+				DE7A4C67181C29750095D7FA /* EAGLView.m in Sources */,
 				DE7A4C2E181C26C60095D7FA /* AppDelegate.m in Sources */,
 				DE7A4C2A181C26C60095D7FA /* main.m in Sources */,
 			);
@@ -395,6 +433,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StringExample/StringExample-Prefix.pch";
 				INFOPLIST_FILE = "StringExample/StringExample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/PatrickGuffey/Documents/Projects/StringARDemo/StringExample,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -408,6 +450,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StringExample/StringExample-Prefix.pch";
 				INFOPLIST_FILE = "StringExample/StringExample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/PatrickGuffey/Documents/Projects/StringARDemo/StringExample,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
