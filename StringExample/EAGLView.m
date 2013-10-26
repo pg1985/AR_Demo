@@ -90,12 +90,47 @@
         
         glGenFramebuffers(1,&_defaultFrameBuffer);
         glBindFramebuffer(GL_FRAMEBUFFER, _defaultFrameBuffer);
+        
+        glGenRenderbuffers(1, &_colorRenderbuffer);
+        glBindRenderbuffer(GL_RENDERBUFFER, _colorRenderbuffer);
+        [_context renderbufferStorage:GL_RENDERBUFFER fromDrawable:(CAEAGLLayer *)[self layer]];
+        
+        glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, _colorRenderbuffer);
+        
+        glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &_frameBufferWidth);
+        glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &_frameBufferHeight);
+        
+        glGenRenderbuffers(1, &_depthBuffer);
+        glBindRenderbuffer(GL_RENDERBUFFER, _depthBuffer);
+        glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, _frameBufferWidth, _frameBufferHeight);
+        
+        glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, _depthBuffer);
+        
+        
+        if(glCheckFramebufferStatus(GL_FRAMEBUFFER)!=GL_FRAMEBUFFER_COMPLETE)
+        {
+            NSLog(@"Failed to make complete framebuffer Object %x",glCheckFramebufferStatus(GL_FRAMEBUFFER));
+        }
+        
+        
     }
 }
 
 - (void) setFrameBuffer
 {
-    
+    if(_context)
+    {
+        [EAGLContext setCurrentContext:_context];
+        
+        if(!_defaultFrameBuffer)
+        {
+            [self createFrameBuffer];
+        }
+        
+        glBindFramebuffer(GL_FRAMEBUFFER, _defaultFrameBuffer);
+        glViewport(0, 0, _frameBufferWidth, _frameBufferHeight);
+        
+    }
 }
 
 /*
