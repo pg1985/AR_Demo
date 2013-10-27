@@ -12,10 +12,10 @@
 #import <OpenGLES/ES1/gl.h>
 #import <OpenGLES/ES1/glext.h>
 
-@interface ViewController ()<StringOGLDelegate>{
+@interface ViewController () <StringOGLDelegate> {
     float _projectionMatrix[16];
 }
-@property (nonatomic,strong)StringOGL * stringOGL;
+@property (nonatomic,strong) StringOGL * stringOGL;
 @end
 
 @implementation ViewController
@@ -47,10 +47,8 @@
     
     _stringOGL = [[StringOGL alloc] initWithDelegate:self context:aContext frameBuffer:[eaglView defaultFrameBuffer] leftHanded:NO];
     
-    //3
     [_stringOGL setProjectionMatrix:_projectionMatrix viewport:viewport orientation:[self interfaceOrientation] reorientIPhoneSplash:YES];
-    
-    //4
+
     [_stringOGL loadImageMarker:@"Marker" ofType:@"png"];
         
 }
