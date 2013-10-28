@@ -64,7 +64,109 @@
     matrix[14] = (2.f * farClip * nearClip)/(nearClip - farClip);
 }
 
-- (void) render {} //only needs to exist for implementation, doesn't need to actually do anything here.
+- (void) render {
+    
+    static const GLfloat cubeVertices[] = {
+        0.5f, -0.5f, -0.5f,
+        0.5f, 0.5f, -0.5f,
+        0.5f, -0.5f, 0.5f,
+        0.5f, -0.5f, 0.5f,
+        0.5f, 0.5f, -0.5f,
+        0.5f, 0.5f, 0.5f,
+        
+        0.5f, 0.5f, -0.5f,
+        -0.5f, 0.5f, -0.5f,
+        0.5f, 0.5f, 0.5f,
+        0.5f, 0.5f, 0.5f,
+        -0.5f, 0.5f, -0.5f,
+        -0.5f, 0.5f, 0.5f,
+        
+        -0.5f, 0.5f, -0.5f,
+        -0.5f, -0.5f, -0.5f,
+        -0.5f, 0.5f, 0.5f,
+        -0.5f, 0.5f, 0.5f,
+        -0.5f, -0.5f, -0.5f,
+        -0.5f, -0.5f, 0.5f,
+        
+        -0.5f, -0.5f, -0.5f,
+        0.5f, -0.5f, -0.5f,
+        -0.5f, -0.5f, 0.5f,
+        -0.5f, -0.5f, 0.5f,
+        0.5f, -0.5f, -0.5f,
+        0.5f, -0.5f, 0.5f,
+        
+        0.5f, 0.5f, 0.5f,
+        -0.5f, 0.5f, 0.5f,
+        0.5f, -0.5f, 0.5f,
+        0.5f, -0.5f, 0.5f,
+        -0.5f, 0.5f, 0.5f,
+        -0.5f, -0.5f, 0.5f,
+        
+        0.5f, -0.5f, -0.5f,
+        -0.5f, -0.5f, -0.5f,
+        0.5f, 0.5f, -0.5f,
+        0.5f, 0.5f, -0.5f,
+        -0.5f, -0.5f, -0.5f,
+        -0.5f, 0.5f, -0.5f,
+    };
+    
+    static const GLubyte squareColors[] =
+    {
+     255,255,0,255,0,255,255,255,0,0,0,0,255,0,255,255,
+    };
+    
+    //1 is used for maxMarkerCount because the demo we're using can only track one marker anyway.  This loop loop will run once per marker
+    const int maxMarkerCount = 1;
+    struct MarkerInfoMatrixBased markerInfo[1];
+    int markerCount = [_stringOGL getMarkerInfoMatrixBased:markerInfo maxMarkerCount:maxMarkerCount];
+    
+    for(int i=0;i<markerCount;i++)
+    {
+     
+    
+        glMatrixMode(GL_PROJECTION);
+        glLoadMatrixf(_projectionMatrix);
+    
+        glMatrixMode(GL_MODELVIEW);
+        glLoadIdentity();
+    
+        glVertexPointer(3, GL_FLOAT, 0, cubeVertices);
+        glEnableClientState(GL_VERTEX_ARRAY);
+    
+        glColorPointer(4, GL_UNSIGNED_BYTE, 0, squareColors);
+        glEnableClientState(GL_COLOR_ARRAY);
+    
+        glTranslatef(0.0, 0.0, -5);
+        glDrawArrays(GL_TRIANGLE_STRIP, 0, 36);
+    }
+} //only needs to exist for implementation, doesn't need to actually do anything here, at least until later.
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self startAnimation];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self stopAnimation];
+}
+
+- (void) startAnimation
+{
+    [_stringOGL resume];
+}
+
+- (void) stopAnimation
+{
+    [_stringOGL pause];
+}
+
+- (BOOL) shouldAutorotate
+{
+    return NO;
+}
 
 - (void)didReceiveMemoryWarning
 {
